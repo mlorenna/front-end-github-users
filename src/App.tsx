@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { lazy, Suspense } from 'react';
+import RouteEnum from './constants/RouteEnum';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import {
+  LoadingOutlined
+} from '@ant-design/icons';
 import './App.scss';
-
+const AuthPage = lazy(() => import('./views/authorization-page/AuthPage'))
+const HomePage = lazy(() => import('./views/home-page/HomePage'));
+const NotFoundPage = lazy(() => import('./views/not-found-page/NotFoundPage'));
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<LoadingOutlined />}>
+      <Router>
+        <Switch>
+          <Route exact path={RouteEnum.Auth} component={AuthPage}></Route>
+          <Route path={RouteEnum.Home} component={HomePage}></Route>
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Router>
+    </Suspense>
   );
 }
 
