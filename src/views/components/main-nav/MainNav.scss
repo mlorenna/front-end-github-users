@@ -1,0 +1,21 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles//alignment.scss";
+.nav-bar {
+    @extend .flex-row-center;
+    width: 100%;
+    height: 10vh;
+    background-color: $bg-color;
+    .content {
+        @extend .flex-row-space-between;
+        width: 100%;
+        padding: 40px 20px;
+
+        .avatar-container {
+            @extend .flex-row-center;
+            .avatar-username-text {
+                color: $text-color;
+                font-weight: bolder;
+            }
+        }
+    }
+}

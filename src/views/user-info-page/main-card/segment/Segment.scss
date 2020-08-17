@@ -1,0 +1,33 @@
+@import "../../../../styles/alignment.scss";
+@import "../../../../styles/colors.scss";
+
+.segment-container {
+    @extend .flex-column-center;
+    width: 100%;
+    margin: 15px 0px;
+    .segment-body {
+        @extend .flex-column-start-start;
+        width: 100%;
+    }
+    .segment-button-container {
+        @extend .flex-row-center;
+        .segment-button {
+            margin: 0px 20px;
+            border: none;
+            background-color: transparent;
+            color: $text-color;
+            font-size: 18px;
+        }
+        .segment-button.active {
+            border-bottom: 3px solid;
+            color: $text-color;
+        }
+        .segment-button:focus {
+            outline: none;
+        }
+    }
+    .divide-line {
+        width: 100%;
+        border-bottom: 1px solid;
+    }
+}

@@ -1,0 +1,13 @@
+@import "../../../../../styles/alignment.scss";
+
+.followers-container {
+    @extend .flex-column-start-start;
+    width: 100%;
+    padding-top: 20px;
+    .followers-info{
+        @extend .flex-row-center;
+        .followers-info-text{
+            @extend .flex-column-start-start
+        }
+    }
+}

@@ -1,8 +1,9 @@
 import React from 'react';
+import '../../styles/global.scss'
 const HomePage: React.FC<any> = (props: React.PropsWithChildren<any>) => {  
     return (
-      <div>
-        Home
+      <div className="container">
+        Welcome
       </div>
     );
   };

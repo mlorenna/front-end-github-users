@@ -1,0 +1,32 @@
+@import "../../../../../styles/alignment.scss";
+
+.activity-container {
+    @extend .flex-column-start-start;
+    width: 100%;
+    padding-top: 20px;
+    .activity-description {
+        margin: 5px 20px;
+    }
+    .activity-title {
+        @extend .flex-row-space-between;
+        width: 100%;
+        .activity-text {
+            font-weight: bolder;
+            margin: 0px 5px;
+        }
+    }
+    .activity-tag-languages {
+        @extend .flex-row-center-start;
+        margin: 5px 20px;
+        .activity-tag {
+            @extend .flex-row-center;
+            border: 2px solid;
+            border-radius: 10px;
+            padding: 2px;
+            margin-right: 5px;
+            .acivity-tag-text {
+                font-size: 12px;
+            }
+        }
+    }
+}

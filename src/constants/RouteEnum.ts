@@ -1,7 +1,7 @@
 enum RouteEnum {
     Auth = '/',
     Home = '/home',
-    UserDashboard ='/dashboard'
+    UserInfo ='/user-info'
   }
   
   export default RouteEnum;
